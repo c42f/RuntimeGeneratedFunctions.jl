@@ -10,7 +10,7 @@ export @RuntimeGeneratedFunction
 
 This type should be constructed via the macro @RuntimeGeneratedFunction.
 """
-struct RuntimeGeneratedFunction{moduletag,id,argnames}
+struct RuntimeGeneratedFunction{moduletag,id,argnames} <: Function
     body::Expr
     function RuntimeGeneratedFunction(moduletag, ex)
         def = splitdef(ex)
